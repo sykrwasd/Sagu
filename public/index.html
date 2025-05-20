@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Sagoon Sales Management System</h1>
+    
+    <label for="n">Name:</label>
+    <input type="text" placeholder="Enter your name" id="n" />
+
+    <label for="q">Quantity:</label>
+    <input type="number" placeholder="Quantity" id="q" />
+
+    <label for="l">Location</label>
+    <select id="l">
+      <option value="Kolej">Kolej</option>
+      <option value="Nr">Nr</option>
+    </select>
+
+    <input id="p" type="text" value="pending" hidden />
+    
+    <div class="button-container">
+      <button type="submit" onclick="addSales()">Add</button>
+    </div><br>
+
+    <a href="viewData.html">View Data Here</a>
+  </div>
+
+  <script src="../script/script.js"></script>
+</body>
+</html>
