@@ -8,7 +8,7 @@
 const date = new Date().toISOString(); 
 
     try {
-        const response = await fetch('http://localhost:3000/add', {
+        const response = await fetch('sagu-production.up.railway.app/add', {
             method: 'Post',
             headers: {
             'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const date = new Date().toISOString();
 
 async function getSales() {
   try {
-    const response = await fetch('http://localhost:3000/getSales');
+    const response = await fetch('sagu-production.up.railway.app/getSales');
 
     if (!response.ok) {
       alert('Failed to fetch sales');
