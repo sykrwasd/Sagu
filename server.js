@@ -5,7 +5,10 @@
   const app = express();
   app.use(cors());
   app.use(express.json());
+  const path = require('path');
+  const express = require('express');
 
+  
 
 const dotenv = require('dotenv')
 dotenv.config({path: './.env'});
@@ -17,9 +20,13 @@ mongoose.connect(process.env.LINK || "mongodb+srv://sykrwasd:123@relearn.bcxxraw
 
     .catch(err => console.log('Connection error:', err));
 
-    
+
+// Serve static files from the 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Route for root '/' to serve index.html
 app.get('/', (req, res) => {
-  res.send('Hello, this is the homepage!');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 
