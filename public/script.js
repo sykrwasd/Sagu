@@ -31,7 +31,7 @@ const date = new Date().toISOString();
 
 async function getSales() {
   try {
-    const response = await fetch('https://sagu-production.up.railway.app//getSales');
+    const response = await fetch('https://sagu-production.up.railway.app/getSales');
 
     if (!response.ok) {
       alert('Failed to fetch sales');

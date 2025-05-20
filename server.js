@@ -6,10 +6,6 @@
   app.use(cors());
   app.use(express.json());
   const path = require('path');
-
-
-  
-
 const dotenv = require('dotenv')
 dotenv.config({path: './.env'});
 const { MongoClient } = require('mongodb');
