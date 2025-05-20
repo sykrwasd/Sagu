@@ -17,6 +17,12 @@ mongoose.connect(process.env.LINK || "mongodb+srv://sykrwasd:123@relearn.bcxxraw
 
     .catch(err => console.log('Connection error:', err));
 
+    
+app.get('/', (req, res) => {
+  res.send('Hello, this is the homepage!');
+});
+
+
 app.post('/add', async (req,res) =>{
     const {name,quantity,location,progress,date} = req.body;
 
