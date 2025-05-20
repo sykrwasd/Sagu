@@ -1,7 +1,7 @@
   const express = require('express');
   const mongoose = require('mongoose');
   const cors = require('cors');
-  const Sales = require('./model/sales');
+  const Sales = require('./model/Sales');
   const app = express();
   app.use(cors());
   app.use(express.json());
