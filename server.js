@@ -1,26 +1,25 @@
-  const express = require('express');
-  const mongoose = require('mongoose');
-  const cors = require('cors');
-  const Sales = require('./model/Sales');
-  const app = express();
-  app.use(cors());
-  app.use(express.json());
-  const path = require('path');
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const Sales = require('./model/Sales');
+const app = express();
+app.use(cors());
+app.use(express.json());
+const path = require('path');
 const dotenv = require('dotenv')
 dotenv.config({path: './.env'});
-const { MongoClient } = require('mongodb');
 
-mongoose.connect(process.env.LINK || "mongodb+srv://sykrwasd:123@relearn.bcxxraw.mongodb.net/saguun?retryWrites=true&w=majority&appName=relearn")
+mongoose.connect(process.env.LINK || "mongodb+srv://sykrwasd:123@relearn.bcxxraw.mongodb.net/saguun?retryWrites=true&w=majority&appName=relearn") //connecting db
 
     .then(() => console.log('MongoDB connected'))
 
     .catch(err => console.log('Connection error:', err));
 
 
-// Serve static files from the 'public' folder
+// tells express to serve static files dekat folder public
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Route for root '/' to serve index.html
+// redirect to index.html aka landing page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -53,7 +52,7 @@ app.get('/getSales', async (req,res) =>{
    
 })
 
-app.post('/updateProgress', async (req, res) => {
+pp.post('/updateProgress', async (req, res) => {
   try {
     const updates = req.body.updates;
 
@@ -67,7 +66,7 @@ app.post('/updateProgress', async (req, res) => {
     return res.status(500).json({ error: 'Something went wrong' });
   }
 });
-
+a
 
 
 
